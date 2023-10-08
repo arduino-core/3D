@@ -1,3 +1,4 @@
+int results[];
 int us_pin = 7;
 int us_echo = 6;
 long time = 0;
