@@ -26,6 +26,6 @@ void scan_environment() {
 
 void loop() {
   scan_enviroment();
-  number_zero =+ 1;
+  number_zero += 1;
   delay(1000);
 }
