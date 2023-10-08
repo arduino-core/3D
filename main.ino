@@ -1,6 +1,6 @@
-int us_pin =7;
-int us_echo =6;
-long time =0;
+int us_pin = 7;
+int us_echo = 6;
+long time = 0;
 long distance = 0;
 
 void setup() {
@@ -9,7 +9,7 @@ void setup() {
   pinMode(us_echo, INPUT);
 }
 
-void loop() {
+void scan_environment() {
   digitalWrite(us_pin, LOW);
   delay(5);
   digitalWrite(us_pin, HIGH);
@@ -19,5 +19,9 @@ void loop() {
   distance = (time/2) * 0.03432;
   Serial.print(distance);
   Serial.println(" cm");
+}
+
+void loop() {
+  scan_enviroment();
   delay(1000);
 }
