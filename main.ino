@@ -1,4 +1,5 @@
 int results[];
+int number_zero = 0;
 int us_pin = 7;
 int us_echo = 6;
 long time = 0;
@@ -18,11 +19,13 @@ void scan_environment() {
   digitalWrite(us_pin, LOW);
   time = pulseIn(us_echo, HIGH);
   distance = (time/2) * 0.03432;
+  results[number_zero] = distance; // Adding the distance to the list
   Serial.print(distance);
   Serial.println(" cm");
 }
 
 void loop() {
   scan_enviroment();
+  number_zero =+ 1;
   delay(1000);
 }
